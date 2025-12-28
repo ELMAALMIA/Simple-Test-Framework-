@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:uml="http://www.omg.org/spec/UML/20090901" xmi:version="2.1">
+    <uml:Model name="C:\Users\ayoub\Downloads\bigData\java-test-framework">
+        <uml:Package name="com">
+            <uml:Package name="com.myframework">
+                <uml:Package name="com.myframework.dev">
+                    <uml:Package name="com.myframework.dev.annotations">
+                        <uml:Class name="None">
+                            <ownedOperation isConstructor="true" name="None" xmi:type="uml:Operation"/>
+                        </uml:Class>
+                        <uml:Annotation name="AfterAll"/>
+                        <uml:Annotation name="AfterEach"/>
+                        <uml:Annotation name="BeforeAll"/>
+                        <uml:Annotation name="BeforeEach"/>
+                        <uml:Annotation name="Disabled"/>
+                        <uml:Annotation name="Test"/>
+                    </uml:Package>
+                    <uml:Package name="com.myframework.dev.core">
+                        <uml:Class name="AbstractTestExecutor">
+                            <ownedOperation isConstructor="true" name="AbstractTestExecutor" xmi:type="uml:Operation"/>
+                            <implementedInterface name="com.myframework.dev.core.TestExecutor"/>
+                        </uml:Class>
+                        <uml:Class name="Assert">
+                            <ownedOperation isConstructor="true" name="Assert" xmi:type="uml:Operation"/>
+                        </uml:Class>
+                        <uml:Class name="ReflectionTestExecutor">
+                            <ownedOperation isConstructor="true" name="ReflectionTestExecutor" xmi:type="uml:Operation"/>
+                        </uml:Class>
+                        <uml:Class name="TestCase">
+                            <ownedAttribute isReadOnly="true" isStatic="false" name="testClass" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#Class" xmi:type="uml:PrimitiveType"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="true" isStatic="false" name="testMethod" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#Method" xmi:type="uml:PrimitiveType"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="true" isStatic="false" name="beforeEachMethods" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#List" xmi:type="uml:PrimitiveType"/>
+                                <upperValue value="*" xmi:type="uml:LiteralUnlimitedNatural"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="true" isStatic="false" name="afterEachMethods" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#List" xmi:type="uml:PrimitiveType"/>
+                                <upperValue value="*" xmi:type="uml:LiteralUnlimitedNatural"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="true" isStatic="false" name="beforeAllMethods" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#List" xmi:type="uml:PrimitiveType"/>
+                                <upperValue value="*" xmi:type="uml:LiteralUnlimitedNatural"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="true" isStatic="false" name="afterAllMethods" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#List" xmi:type="uml:PrimitiveType"/>
+                                <upperValue value="*" xmi:type="uml:LiteralUnlimitedNatural"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="true" isStatic="false" name="expectedException" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#Class" xmi:type="uml:PrimitiveType"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="true" isStatic="false" name="timeout" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#long" xmi:type="uml:PrimitiveType"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="true" isStatic="false" name="disabled" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#boolean" xmi:type="uml:PrimitiveType"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="true" isStatic="false" name="disabledReason" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#String" xmi:type="uml:PrimitiveType"/>
+                            </ownedAttribute>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getTimeout" visibility="PUBLIC">
+                                <ownedParameter name="return" type="long" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getBeforeEachMethods" visibility="PUBLIC">
+                                <ownedParameter name="return" type="List" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getAfterEachMethods" visibility="PUBLIC">
+                                <ownedParameter name="return" type="List" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getExpectedException" visibility="PUBLIC">
+                                <ownedParameter name="return" type="Class" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getBeforeAllMethods" visibility="PUBLIC">
+                                <ownedParameter name="return" type="List" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="isDisabled" visibility="PUBLIC">
+                                <ownedParameter name="return" type="boolean" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getTestMethod" visibility="PUBLIC">
+                                <ownedParameter name="return" type="Method" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getTestClass" visibility="PUBLIC">
+                                <ownedParameter name="return" type="Class" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getDisabledReason" visibility="PUBLIC">
+                                <ownedParameter name="return" type="String" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getAfterAllMethods" visibility="PUBLIC">
+                                <ownedParameter name="return" type="List" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <ownedOperation isConstructor="true" name="TestCase" xmi:type="uml:Operation">
+                                <ownedParameter name="arg0" type="Class&lt;?&gt;" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg1" type="Method" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg2" type="List&lt;Method&gt;" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg3" type="List&lt;Method&gt;" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg4" type="List&lt;Method&gt;" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg5" type="List&lt;Method&gt;" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg6" type="Class&lt;Throwable&gt;" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg7" type="long" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg8" type="boolean" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg9" type="String" xmi:type="uml:Parameter"/>
+                            </ownedOperation>
+                        </uml:Class>
+                        <uml:Class name="TestCaseBuilder">
+                            <ownedAttribute isReadOnly="false" isStatic="false" name="testClass" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#Class" xmi:type="uml:PrimitiveType"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="false" isStatic="false" name="testMethod" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#Method" xmi:type="uml:PrimitiveType"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="false" isStatic="false" name="beforeEachMethods" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#List" xmi:type="uml:PrimitiveType"/>
+                                <upperValue value="*" xmi:type="uml:LiteralUnlimitedNatural"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="false" isStatic="false" name="afterEachMethods" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#List" xmi:type="uml:PrimitiveType"/>
+                                <upperValue value="*" xmi:type="uml:LiteralUnlimitedNatural"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="false" isStatic="false" name="beforeAllMethods" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#List" xmi:type="uml:PrimitiveType"/>
+                                <upperValue value="*" xmi:type="uml:LiteralUnlimitedNatural"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="false" isStatic="false" name="afterAllMethods" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#List" xmi:type="uml:PrimitiveType"/>
+                                <upperValue value="*" xmi:type="uml:LiteralUnlimitedNatural"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="false" isStatic="false" name="expectedException" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#Class" xmi:type="uml:PrimitiveType"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="false" isStatic="false" name="timeout" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#long" xmi:type="uml:PrimitiveType"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="false" isStatic="false" name="disabled" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#boolean" xmi:type="uml:PrimitiveType"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="false" isStatic="false" name="disabledReason" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#String" xmi:type="uml:PrimitiveType"/>
+                            </ownedAttribute>
+                            <ownedOperation isConstructor="true" name="TestCaseBuilder" xmi:type="uml:Operation"/>
+                        </uml:Class>
+                        <uml:Class name="TestExecutorFactory"/>
+                        <uml:Class name="TestResult"/>
+                        <uml:Class name="TestScanner">
+                            <uml:Operation isLeaf="false" isStatic="false" name="scan" visibility="PUBLIC">
+                                <ownedParameter name="return" type="List" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="Class&lt;?&gt;" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <ownedOperation isConstructor="true" name="TestScanner" xmi:type="uml:Operation"/>
+                        </uml:Class>
+                        <uml:Class name="TestScannerFactory">
+                            <ownedOperation isConstructor="true" name="TestScannerFactory" xmi:type="uml:Operation"/>
+                        </uml:Class>
+                        <uml:Interface name="Executable">
+                            <uml:Operation isLeaf="false" isStatic="false" name="execute" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                        </uml:Interface>
+                        <uml:Interface name="TestExecutor"/>
+                        <uml:Enumeration name="Status">
+                            <uml:EnumerationLiteral name="PASSED"/>
+                            <uml:EnumerationLiteral name="FAILED"/>
+                            <uml:EnumerationLiteral name="SKIPPED"/>
+                        </uml:Enumeration>
+                        <packagedElement source="class com.myframework.dev.core.AbstractTestExecutor" target="interface com.myframework.dev.core.TestExecutor" xmi:id="6b13f713-6b23-491c-9585-58b0afef410e" xmi:type="uml:REALIZATION"/>
+                        <packagedElement source="class com.myframework.dev.core.ReflectionTestExecutor" target="class com.myframework.dev.core.AbstractTestExecutor" xmi:id="5a219168-144c-4b41-863b-8903f4c798e2" xmi:type="uml:GENERALIZATION"/>
+                    </uml:Package>
+                    <uml:Package name="com.myframework.dev.examples">
+                        <uml:Class name="AdvancedTest">
+                            <ownedAttribute isReadOnly="false" isStatic="true" name="setupCount" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#int" xmi:type="uml:PrimitiveType"/>
+                            </ownedAttribute>
+                            <ownedAttribute isReadOnly="false" isStatic="false" name="testData" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#String" xmi:type="uml:PrimitiveType"/>
+                            </ownedAttribute>
+                            <uml:Operation isLeaf="false" isStatic="false" name="testAssertNotEquals" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="testSkippedNoReason" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="true" name="lambda$testAssertThrows$0" visibility="PRIVATE">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="true" name="beforeAll" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="testAssertNull" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="testSkipped" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="testWithTimeout" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="tearDown" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="testAssertNotNull" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setUp" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="true" name="afterAll" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="testTimeoutFails" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="testAssertThrows" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <ownedOperation isConstructor="true" name="AdvancedTest" xmi:type="uml:Operation"/>
+                        </uml:Class>
+                        <uml:Class name="Calculator">
+                            <uml:Operation isLeaf="false" isStatic="false" name="add" visibility="PUBLIC">
+                                <ownedParameter name="return" type="int" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="int" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg1" type="int" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="sub" visibility="PUBLIC">
+                                <ownedParameter name="return" type="int" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="int" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg1" type="int" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <ownedOperation isConstructor="true" name="Calculator" xmi:type="uml:Operation"/>
+                        </uml:Class>
+                        <uml:Class name="CalculatorTest">
+                            <uml:Operation isLeaf="false" isStatic="false" name="tearDown" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setUp" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="testAdd" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="testSub" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="failingExample" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <ownedOperation isConstructor="true" name="CalculatorTest" xmi:type="uml:Operation"/>
+                        </uml:Class>
+                        <uml:Class name="ExceptionTest">
+                            <uml:Operation isLeaf="false" isStatic="false" name="testExpectedException" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="testWrongExceptionType" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="testNoExceptionThrown" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="testNullPointerException" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="testNormalTestWithoutException" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="testDivisionByZero" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <ownedOperation isConstructor="true" name="ExceptionTest" xmi:type="uml:Operation"/>
+                        </uml:Class>
+                    </uml:Package>
+                    <uml:Package name="com.myframework.dev.report">
+                        <uml:Class name="CompositeTestReporter">
+                            <ownedAttribute isReadOnly="true" isStatic="false" name="reporters" visibility="PRIVATE" xmi:type="uml:Property">
+                                <type href="types.uml#TestReporter[]" xmi:type="uml:PrimitiveType"/>
+                                <upperValue value="*" xmi:type="uml:LiteralUnlimitedNatural"/>
+                            </ownedAttribute>
+                            <ownedOperation isConstructor="true" name="CompositeTestReporter" xmi:type="uml:Operation">
+                                <ownedParameter name="arg0" type="TestReporter[]" xmi:type="uml:Parameter"/>
+                            </ownedOperation>
+                            <implementedInterface name="com.myframework.dev.report.TestReporter"/>
+                        </uml:Class>
+                        <uml:Class name="ConsoleTestReporter">
+                            <ownedOperation isConstructor="true" name="ConsoleTestReporter" xmi:type="uml:Operation"/>
+                            <implementedInterface name="com.myframework.dev.report.TestReporter"/>
+                        </uml:Class>
+                        <uml:Class name="HtmlTestReporter">
+                            <ownedOperation isConstructor="true" name="HtmlTestReporter" xmi:type="uml:Operation">
+                                <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
+                            </ownedOperation>
+                            <ownedOperation isConstructor="true" name="HtmlTestReporter" xmi:type="uml:Operation"/>
+                            <implementedInterface name="com.myframework.dev.report.TestReporter"/>
+                        </uml:Class>
+                        <uml:Class name="TestReporterFactory"/>
+                        <uml:Class name="XmlTestReporter">
+                            <ownedOperation isConstructor="true" name="XmlTestReporter" xmi:type="uml:Operation">
+                                <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
+                            </ownedOperation>
+                            <ownedOperation isConstructor="true" name="XmlTestReporter" xmi:type="uml:Operation"/>
+                            <implementedInterface name="com.myframework.dev.report.TestReporter"/>
+                        </uml:Class>
+                        <uml:Interface name="TestReporter"/>
+                        <packagedElement source="class com.myframework.dev.report.CompositeTestReporter" target="interface com.myframework.dev.report.TestReporter" xmi:id="32d4d110-a1cd-46af-99ee-d3afe716901f" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class com.myframework.dev.report.CompositeTestReporter" target="interface com.myframework.dev.report.TestReporter" xmi:id="497d1b87-e720-427c-a19e-84cd3b1494ae" xmi:type="uml:REALIZATION"/>
+                        <packagedElement source="class com.myframework.dev.report.ConsoleTestReporter" target="interface com.myframework.dev.report.TestReporter" xmi:id="344a35df-056d-4f0e-8686-3fd9b5fbdd99" xmi:type="uml:REALIZATION"/>
+                        <packagedElement source="class com.myframework.dev.report.HtmlTestReporter" target="interface com.myframework.dev.report.TestReporter" xmi:id="1e4dbd8f-c3a1-482d-9904-bcbd3f164c0d" xmi:type="uml:REALIZATION"/>
+                        <packagedElement source="class com.myframework.dev.report.XmlTestReporter" target="interface com.myframework.dev.report.TestReporter" xmi:id="0ff4dad0-f50a-4f2b-ac24-4298072ba437" xmi:type="uml:REALIZATION"/>
+                    </uml:Package>
+                    <uml:Package name="com.myframework.dev.runner">
+                        <uml:Class name="TestRunner"/>
+                    </uml:Package>
+                </uml:Package>
+            </uml:Package>
+        </uml:Package>
+    </uml:Model>
+</xmi:XMI>

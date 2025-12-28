@@ -1,7 +1,21 @@
 # Simple Test Framework 
+![Java](https://img.shields.io/badge/Java-17+-blue)
+![Maven](https://img.shields.io/badge/Maven-3.6+-brightgreen)
+![Build](https://img.shields.io/badge/Build-Passing-success)
+![Reports](https://img.shields.io/badge/Reports-HTML%20%7C%20XML-orange)
+
 
 A lightweight, educational Java test framework simulation inspired by JUnit. This framework demonstrates core testing concepts including annotations, reflection-based test execution, and assertion mechanisms.
 
+## Table of Contents
+1. [Quick Start](#quick-start)
+2. [Features](#features)
+3. [Building the Framework](#building-the-framework)
+4. [Using the Framework](#using-the-framework)
+5. [Test Reports](#test-reports)
+6. [Available Assertions](#available-assertions)
+7. [Advanced Features](#advanced-features)
+8. [License](#license)
 ## Quick Start
 
 ```bash

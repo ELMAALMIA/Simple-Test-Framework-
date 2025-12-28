@@ -1,0 +1,40 @@
+name: Java CI - Test Framework Integration
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test-with-custom-framework:
+    name: Run Custom Framework Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Build custom framework
+        run: mvn clean package
+
+      - name: Run tests with Simple Test Framework
+        run: |
+          java -cp "target/classes:target/simple-test-framework-1.0-SNAPSHOT.jar" \
+               com.myframework.dev.runner.TestRunner \
+               --xml test-results-custom.xml \
+               com.myframework.dev.examples.CalculatorTest
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        with:
+          name: custom-framework-results
+          path: test-results-custom.xml
+
+

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="C:\Users\ayoub\Downloads\bigData\java-test-framework">
+    <package name="com">
+        <package name="com.myframework">
+            <package name="com.myframework.dev">
+                <package name="com.myframework.dev.annotations">
+                    <class name="None">
+                        <parent>java.lang.Throwable</parent>
+                        <constructor name="None"/>
+                    </class>
+                    <annotation name="AfterAll"/>
+                    <annotation name="AfterEach"/>
+                    <annotation name="BeforeAll"/>
+                    <annotation name="BeforeEach"/>
+                    <annotation name="Disabled"/>
+                    <annotation name="Test"/>
+                </package>
+                <package name="com.myframework.dev.core">
+                    <class name="AbstractTestExecutor">
+                        <parent>java.lang.Object</parent>
+                        <constructor name="AbstractTestExecutor"/>
+                        <interfaceImplemented>com.myframework.dev.core.TestExecutor</interfaceImplemented>
+                    </class>
+                    <class name="Assert">
+                        <parent>java.lang.Object</parent>
+                        <constructor name="Assert"/>
+                    </class>
+                    <class name="ReflectionTestExecutor">
+                        <parent>com.myframework.dev.core.AbstractTestExecutor</parent>
+                        <constructor name="ReflectionTestExecutor"/>
+                    </class>
+                    <class name="TestCase">
+                        <parent>java.lang.Object</parent>
+                        <field isFinal="true" isStatic="false" multiplicity="" name="testClass" type="Class" visibility="PRIVATE"/>
+                        <field isFinal="true" isStatic="false" multiplicity="" name="testMethod" type="Method" visibility="PRIVATE"/>
+                        <field isFinal="true" isStatic="false" multiplicity="[]" name="beforeEachMethods" type="List&lt;List&gt;" visibility="PRIVATE"/>
+                        <field isFinal="true" isStatic="false" multiplicity="[]" name="afterEachMethods" type="List&lt;List&gt;" visibility="PRIVATE"/>
+                        <field isFinal="true" isStatic="false" multiplicity="[]" name="beforeAllMethods" type="List&lt;List&gt;" visibility="PRIVATE"/>
+                        <field isFinal="true" isStatic="false" multiplicity="[]" name="afterAllMethods" type="List&lt;List&gt;" visibility="PRIVATE"/>
+                        <field isFinal="true" isStatic="false" multiplicity="" name="expectedException" type="Class" visibility="PRIVATE"/>
+                        <field isFinal="true" isStatic="false" multiplicity="" name="timeout" type="long" visibility="PRIVATE"/>
+                        <field isFinal="true" isStatic="false" multiplicity="" name="disabled" type="boolean" visibility="PRIVATE"/>
+                        <field isFinal="true" isStatic="false" multiplicity="" name="disabledReason" type="String" visibility="PRIVATE"/>
+                        <method isFinal="false" isStatic="false" name="getTimeout" returnType="long" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="getBeforeEachMethods" returnType="List" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="getAfterEachMethods" returnType="List" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="getExpectedException" returnType="Class" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="getBeforeAllMethods" returnType="List" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="isDisabled" returnType="boolean" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="getTestMethod" returnType="Method" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="getTestClass" returnType="Class" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="getDisabledReason" returnType="String" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="getAfterAllMethods" returnType="List" visibility="PUBLIC"/>
+                        <constructor name="TestCase">
+                            <parameter name="arg0" type="Class&lt;?&gt;"/>
+                            <parameter name="arg1" type="Method"/>
+                            <parameter name="arg2" type="List&lt;Method&gt;"/>
+                            <parameter name="arg3" type="List&lt;Method&gt;"/>
+                            <parameter name="arg4" type="List&lt;Method&gt;"/>
+                            <parameter name="arg5" type="List&lt;Method&gt;"/>
+                            <parameter name="arg6" type="Class&lt;Throwable&gt;"/>
+                            <parameter name="arg7" type="long"/>
+                            <parameter name="arg8" type="boolean"/>
+                            <parameter name="arg9" type="String"/>
+                        </constructor>
+                    </class>
+                    <class name="TestCaseBuilder">
+                        <parent>java.lang.Object</parent>
+                        <field isFinal="false" isStatic="false" multiplicity="" name="testClass" type="Class" visibility="PRIVATE"/>
+                        <field isFinal="false" isStatic="false" multiplicity="" name="testMethod" type="Method" visibility="PRIVATE"/>
+                        <field isFinal="false" isStatic="false" multiplicity="[]" name="beforeEachMethods" type="List&lt;List&gt;" visibility="PRIVATE"/>
+                        <field isFinal="false" isStatic="false" multiplicity="[]" name="afterEachMethods" type="List&lt;List&gt;" visibility="PRIVATE"/>
+                        <field isFinal="false" isStatic="false" multiplicity="[]" name="beforeAllMethods" type="List&lt;List&gt;" visibility="PRIVATE"/>
+                        <field isFinal="false" isStatic="false" multiplicity="[]" name="afterAllMethods" type="List&lt;List&gt;" visibility="PRIVATE"/>
+                        <field isFinal="false" isStatic="false" multiplicity="" name="expectedException" type="Class" visibility="PRIVATE"/>
+                        <field isFinal="false" isStatic="false" multiplicity="" name="timeout" type="long" visibility="PRIVATE"/>
+                        <field isFinal="false" isStatic="false" multiplicity="" name="disabled" type="boolean" visibility="PRIVATE"/>
+                        <field isFinal="false" isStatic="false" multiplicity="" name="disabledReason" type="String" visibility="PRIVATE"/>
+                        <constructor name="TestCaseBuilder"/>
+                    </class>
+                    <class name="TestExecutorFactory">
+                        <parent>java.lang.Object</parent>
+                    </class>
+                    <class name="TestResult">
+                        <parent>java.lang.Object</parent>
+                    </class>
+                    <class name="TestScanner">
+                        <parent>java.lang.Object</parent>
+                        <method isFinal="false" isStatic="false" name="scan" returnType="List" visibility="PUBLIC">
+                            <parameter name="arg0" type="Class&lt;?&gt;"/>
+                        </method>
+                        <constructor name="TestScanner"/>
+                    </class>
+                    <class name="TestScannerFactory">
+                        <parent>java.lang.Object</parent>
+                        <constructor name="TestScannerFactory"/>
+                    </class>
+                    <interface name="Executable">
+                        <method isFinal="false" isStatic="false" name="execute" returnType="void" visibility="PUBLIC"/>
+                    </interface>
+                    <interface name="TestExecutor"/>
+                    <relation source="class com.myframework.dev.core.AbstractTestExecutor" target="interface com.myframework.dev.core.TestExecutor" type="REALIZATION"/>
+                    <relation source="class com.myframework.dev.core.ReflectionTestExecutor" target="class com.myframework.dev.core.AbstractTestExecutor" type="GENERALIZATION"/>
+                    <enumeration name="Status"/>
+                </package>
+                <package name="com.myframework.dev.examples">
+                    <class name="AdvancedTest">
+                        <parent>java.lang.Object</parent>
+                        <field isFinal="false" isStatic="true" multiplicity="" name="setupCount" type="int" visibility="PRIVATE"/>
+                        <field isFinal="false" isStatic="false" multiplicity="" name="testData" type="String" visibility="PRIVATE"/>
+                        <method isFinal="false" isStatic="false" name="testAssertNotEquals" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="testSkippedNoReason" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="true" name="lambda$testAssertThrows$0" returnType="void" visibility="PRIVATE"/>
+                        <method isFinal="false" isStatic="true" name="beforeAll" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="testAssertNull" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="testSkipped" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="testWithTimeout" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="tearDown" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="testAssertNotNull" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="setUp" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="true" name="afterAll" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="testTimeoutFails" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="testAssertThrows" returnType="void" visibility="PUBLIC"/>
+                        <constructor name="AdvancedTest"/>
+                    </class>
+                    <class name="Calculator">
+                        <parent>java.lang.Object</parent>
+                        <method isFinal="false" isStatic="false" name="add" returnType="int" visibility="PUBLIC">
+                            <parameter name="arg0" type="int"/>
+                            <parameter name="arg1" type="int"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="sub" returnType="int" visibility="PUBLIC">
+                            <parameter name="arg0" type="int"/>
+                            <parameter name="arg1" type="int"/>
+                        </method>
+                        <constructor name="Calculator"/>
+                    </class>
+                    <class name="CalculatorTest">
+                        <parent>java.lang.Object</parent>
+                        <method isFinal="false" isStatic="false" name="tearDown" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="setUp" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="testAdd" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="testSub" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="failingExample" returnType="void" visibility="PUBLIC"/>
+                        <constructor name="CalculatorTest"/>
+                    </class>
+                    <class name="ExceptionTest">
+                        <parent>java.lang.Object</parent>
+                        <method isFinal="false" isStatic="false" name="testExpectedException" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="testWrongExceptionType" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="testNoExceptionThrown" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="testNullPointerException" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="testNormalTestWithoutException" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="testDivisionByZero" returnType="void" visibility="PUBLIC"/>
+                        <constructor name="ExceptionTest"/>
+                    </class>
+                </package>
+                <package name="com.myframework.dev.report">
+                    <class name="CompositeTestReporter">
+                        <parent>java.lang.Object</parent>
+                        <field isFinal="true" isStatic="false" multiplicity="[]" name="reporters" type="TestReporter[]&lt;TestReporter[]&gt;" visibility="PRIVATE"/>
+                        <constructor name="CompositeTestReporter">
+                            <parameter name="arg0" type="TestReporter[]"/>
+                        </constructor>
+                        <interfaceImplemented>com.myframework.dev.report.TestReporter</interfaceImplemented>
+                    </class>
+                    <class name="ConsoleTestReporter">
+                        <parent>java.lang.Object</parent>
+                        <constructor name="ConsoleTestReporter"/>
+                        <interfaceImplemented>com.myframework.dev.report.TestReporter</interfaceImplemented>
+                    </class>
+                    <class name="HtmlTestReporter">
+                        <parent>java.lang.Object</parent>
+                        <constructor name="HtmlTestReporter">
+                            <parameter name="arg0" type="String"/>
+                        </constructor>
+                        <constructor name="HtmlTestReporter"/>
+                        <interfaceImplemented>com.myframework.dev.report.TestReporter</interfaceImplemented>
+                    </class>
+                    <class name="TestReporterFactory">
+                        <parent>java.lang.Object</parent>
+                    </class>
+                    <class name="XmlTestReporter">
+                        <parent>java.lang.Object</parent>
+                        <constructor name="XmlTestReporter">
+                            <parameter name="arg0" type="String"/>
+                        </constructor>
+                        <constructor name="XmlTestReporter"/>
+                        <interfaceImplemented>com.myframework.dev.report.TestReporter</interfaceImplemented>
+                    </class>
+                    <interface name="TestReporter"/>
+                    <relation source="class com.myframework.dev.report.CompositeTestReporter" target="interface com.myframework.dev.report.TestReporter" type="AGGREGATION"/>
+                    <relation source="class com.myframework.dev.report.CompositeTestReporter" target="interface com.myframework.dev.report.TestReporter" type="REALIZATION"/>
+                    <relation source="class com.myframework.dev.report.ConsoleTestReporter" target="interface com.myframework.dev.report.TestReporter" type="REALIZATION"/>
+                    <relation source="class com.myframework.dev.report.HtmlTestReporter" target="interface com.myframework.dev.report.TestReporter" type="REALIZATION"/>
+                    <relation source="class com.myframework.dev.report.XmlTestReporter" target="interface com.myframework.dev.report.TestReporter" type="REALIZATION"/>
+                </package>
+                <package name="com.myframework.dev.runner">
+                    <class name="TestRunner">
+                        <parent>java.lang.Object</parent>
+                    </class>
+                </package>
+            </package>
+        </package>
+    </package>
+</project>
